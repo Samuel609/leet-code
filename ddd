@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+class Result {
+    public static void fizzBuzz(int n) {
+        for (int i = 1, fizz = 0, buzz = 0; i <= n; i++) {
+            fizz++;
+            buzz++;
+            if (fizz == 3 && buzz == 5) {
+                System.out.println("FizzBuzz");
+                fizz = 0;
+                buzz = 0;
+            } else if (fizz == 3) {
+                System.out.println("Fizz");
+                fizz = 0;
+            } else if (buzz == 5) {
+                System.out.println("Buzz");
+                buzz = 0;
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+        Result.fizzBuzz(n);
+        bufferedReader.close();
+    }
+}
